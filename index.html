@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elon Musk — 企业家 · 工程师 · 梦想家</title>
+  <meta name="description" content="Elon Musk 个人网站。SpaceX、Tesla、xAI 创始人，致力于推动可持续能源、太空探索与人工智能的发展。了解他的创业历程与旗下公司。">
+  <meta name="keywords" content="Elon Musk,马斯克,SpaceX,Tesla,xAI,Neuralink,电动汽车,太空探索,人工智能">
+  <meta name="author" content="Elon Musk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://elonmusk.com">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Elon Musk — 企业家 · 工程师 · 梦想家">
+  <meta property="og:description" content="SpaceX、Tesla、xAI 创始人，致力于推动可持续能源、太空探索与人工智能的发展。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elonmusk.com">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elon Musk">
+  <meta name="twitter:description" content="SpaceX、Tesla、xAI 创始人。推动可持续能源、太空探索与人工智能的发展。">
+  <meta name="twitter:site" content="@elonmusk">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== Nav ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 40px; height: 64px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #eee;
+    }
+    .nav-logo { font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 14px; color: #555; transition: color 0.2s; }
+    .nav-links a:hover { color: #000; }
+
+    /* ===== Hero ===== */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 80px 80px;
+      max-width: 1000px; margin: 0 auto;
+      gap: 80px;
+    }
+    .hero-text { flex: 1; }
+    .hero-text h1 { font-size: 64px; font-weight: 700; line-height: 1.1; margin-bottom: 24px; }
+    .hero-text .sub { font-size: 20px; color: #666; margin-bottom: 16px; }
+    .hero-text .bio { font-size: 16px; color: #444; max-width: 520px; margin-bottom: 40px; }
+    .hero-links { display: flex; gap: 16px; }
+    .btn {
+      display: inline-block; padding: 12px 28px; border-radius: 8px;
+      font-size: 14px; font-weight: 600; transition: all 0.2s; cursor: pointer;
+      border: none;
+    }
+    .btn-dark { background: #1a1a1a; color: #fff; }
+    .btn-dark:hover { background: #333; }
+    .btn-outline { border: 1.5px solid #ccc; color: #1a1a1a; }
+    .btn-outline:hover { border-color: #1a1a1a; }
+
+    .hero-portrait {
+      width: 340px; height: 340px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+    }
+
+    .scroll-arrow {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      cursor: pointer; animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-8px); }
+      60% { transform: translateX(-50%) translateY(-4px); }
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 100px 80px; max-width: 1000px; margin: 0 auto; }
+    .section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: #999; margin-bottom: 16px; }
+    .section-title { font-size: 36px; font-weight: 700; margin-bottom: 48px; }
+
+    /* ===== Companies ===== */
+    .companies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .company-card {
+      border: 1px solid #eee; border-radius: 12px; padding: 32px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .company-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .company-card .icon { font-size: 32px; margin-bottom: 16px; }
+    .company-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .company-card p { font-size: 14px; color: #666; }
+    .company-card .role { font-size: 12px; color: #999; margin-top: 12px; }
+
+    /* ===== Timeline ===== */
+    .timeline { position: relative; }
+    .timeline::before { content: ""; position: absolute; left: 0; top: 4px; bottom: 4px; width: 2px; background: #eee; }
+    .timeline-item { position: relative; padding-left: 32px; margin-bottom: 40px; }
+    .timeline-item::before {
+      content: ""; position: absolute; left: -4px; top: 6px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #1a1a1a; border: 2px solid #fff;
+    }
+    .timeline-item .year { font-size: 12px; color: #999; letter-spacing: 2px; margin-bottom: 4px; }
+    .timeline-item h4 { font-size: 17px; margin-bottom: 4px; }
+    .timeline-item p { font-size: 14px; color: #555; }
+
+    /* ===== Gallery ===== */
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .gallery img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 8px; transition: opacity 0.3s;
+    }
+
+    /* ===== Quote ===== */
+    .quote-section { background: #f8f8f8; text-align: center; padding: 100px 80px; }
+    .quote-section blockquote { font-size: 24px; font-style: italic; color: #444; max-width: 640px; margin: 0 auto; }
+    .quote-section blockquote::before { content: "“"; font-size: 48px; display: block; color: #ccc; }
+    .quote-section blockquote::after { content: "”"; }
+
+    /* ===== Footer ===== */
+    footer { text-align: center; padding: 40px; font-size: 13px; color: #999; border-top: 1px solid #eee; }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { flex-direction: column-reverse; padding: 100px 20px 40px; gap: 40px; text-align: center; }
+      .hero-text h1 { font-size: 40px; }
+      .hero-text .bio { max-width: 100%; }
+      .hero-portrait { width: 200px; height: 200px; margin: 0 auto; }
+      .hero-links { justify-content: center; }
+      section { padding: 60px 20px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">ELON MUSK</div>
+    <ul class="nav-links">
+      <li><a href="#about">关于</a></li>
+      <li><a href="#companies">公司</a></li>
+      <li><a href="#timeline">时间线</a></li>
+      <li><a href="#gallery">图片</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero" id="about" style="position: relative;">
+    <div class="hero-text">
+      <h1>Elon Musk</h1>
+      <div class="sub">企业家 · 工程师 · 梦想家</div>
+      <p class="bio">
+        SpaceX 创始人兼 CEO、Tesla CEO、xAI 创始人。
+        致力于推动可持续能源、太空探索与人工智能的发展，让人类成为多星球物种。
+      </p>
+      <div class="hero-links">
+        <a href="https://x.com/elonmusk" target="_blank" class="btn btn-dark">X (Twitter)</a>
+        <a href="#companies" class="btn btn-outline">了解更多</a>
+      </div>
+    </div>
+    <img
+      class="hero-portrait"
+      src="https://picsum.photos/seed/elon/400/400"
+      alt="Elon Musk">
+    <div class="scroll-arrow" onclick="document.getElementById('companies').scrollIntoView({behavior:'smooth'})">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+
+  <section id="companies">
+    <div class="section-label">Companies</div>
+    <h2 class="section-title">旗下公司</h2>
+    <div class="companies-grid">
+      <div class="company-card">
+        <div class="icon">🚀</div>
+        <h3>SpaceX</h3>
+        <p>可重复使用火箭技术，目标将人类送上火星。Falcon 9、Starship、Starlink。</p>
+        <div class="role">CEO · 2002 年创立</div>
+      </div>
+      <div class="company-card">
+        <div class="icon">⚡</div>
+        <h3>Tesla</h3>
+        <p>全球领先的电动汽车与清洁能源公司。Model S/3/X/Y、Powerwall、Optimus。</p>
+        <div class="role">CEO · 2004 年加入</div>
+      </div>
+      <div class="company-card">
+        <div class="icon">🤖</div>
+        <h3>xAI</h3>
+        <p>专注于理解宇宙真实本质的 AI 公司。开发 Grok 系列模型。</p>
+        <div class="role">创始人 · 2023 年创立</div>
+      </div>
+      <div class="company-card">
+        <div class="icon">🧠</div>
+        <h3>Neuralink</h3>
+        <p>脑机接口技术，旨在连接人脑与计算机，治疗神经系统疾病。</p>
+        <div class="role">联合创始人 · 2016 年</div>
+      </div>
+      <div class="company-card">
+        <div class="icon">🛣️</div>
+        <h3>The Boring Company</h3>
+        <p>隧道挖掘与城市交通解决方案，缓解地面拥堵。</p>
+        <div class="role">创始人 · 2016 年</div>
+      </div>
+      <div class="company-card">
+        <div class="icon">🌐</div>
+        <h3>X (Twitter)</h3>
+        <p>全球社交媒体平台，致力于成为万能应用。</p>
+        <div class="role">Owner · 2022 年收购</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="section-label">Timeline</div>
+    <h2 class="section-title">人生轨迹</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">1971</div>
+        <h4>出生于南非比勒陀利亚</h4>
+        <p>6 月 28 日出生，父亲 Errol Musk 是机电工程师，母亲 Maye Musk 是模特兼营养师。父母在他 9 岁时离婚。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1983</div>
+        <h4>12 岁自学编程</h4>
+        <p>自学 BASIC 编程，开发了一款名为 <em>Blastar</em> 的太空射击游戏，以约 500 美元卖给了一家电脑杂志。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1989</div>
+        <h4>移居加拿大</h4>
+        <p>17 岁时通过母亲的加拿大血统获得护照，独自前往加拿大。在农场和锯木厂打工，干过锅炉清洗等苦力活。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1992</div>
+        <h4>进入宾夕法尼亚大学</h4>
+        <p>获得物理学学士和经济学学士双学位。在校期间深入思考对人类未来影响最大的三个领域：互联网、可持续能源、太空探索。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1995</div>
+        <h4>斯坦福博士仅读两天退学</h4>
+        <p>被斯坦福材料科学博士项目录取，但在互联网浪潮中仅上了两天课便退学创业。与弟弟 Kimbal 共同创立 Zip2，为报纸提供在线城市指南。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1999</div>
+        <h4>Zip2 以 3.07 亿美元出售</h4>
+        <p>Compaq 收购 Zip2，Musk 获得约 2200 万美元。同月，他将大部分收益投入新公司 X.com——一家在线支付初创公司。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2000</div>
+        <h4>X.com 与 Confinity 合并</h4>
+        <p>X.com 与 Peter Thiel 的 Confinity 合并，后更名为 PayPal。Musk 力推放弃 Unix 转向 Windows，用户规模从零增长到百万级。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2002</div>
+        <h4>PayPal 以 15 亿美元出售</h4>
+        <p>Musk 作为最大股东获得约 1.8 亿美元。同年 6 月创立 SpaceX，目标是降低太空运输成本，最终实现火星殖民。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2004</div>
+        <h4>加入 Tesla Motors</h4>
+        <p>领投 A 轮融资 650 万美元，成为最大股东并出任董事长。后担任 CEO，领导 Roadster 和 Model S 的研发。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2006</div>
+        <h4>SolarCity 成立</h4>
+        <p>Musk 提供初始概念和资金，由表弟 Lyndon 和 Peter Rive 运营。后于 2016 年被 Tesla 收购，整合为 Tesla Energy。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2008</div>
+        <h4>濒临破产</h4>
+        <p>SpaceX 前三次 Falcon 1 发射全部失败，Tesla 烧光资金。NASA 在最后关头授予 16 亿美元合同救了他。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2008</div>
+        <h4>Tesla Roadster 开始交付</h4>
+        <p>全球首款高速公路合法的纯电动量产跑车，0–100km/h 仅需 3.9 秒，单次充电续航 394 公里，彻底颠覆了人们对电动车的认知。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2010</div>
+        <h4>Tesla 在纳斯达克上市</h4>
+        <p>成为 1956 年福特之后首家上市的美国汽车制造商，IPO 融资 2.26 亿美元。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2012</div>
+        <h4>Model S 交付 & Dragon 对接空间站</h4>
+        <p>Model S 开启交付，奠定豪华电动车新标杆。同年 Dragon 飞船成为首个与国际空间站对接的商业航天器。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2015</div>
+        <h4>Falcon 9 首次回收成功</h4>
+        <p>SpaceX 首次将 Falcon 9 一级助推器垂直降落在陆地。可重复使用火箭颠覆航天产业，发射成本降低超 10 倍。同年共同创立 OpenAI。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2016</div>
+        <h4>Neuralink & The Boring Company</h4>
+        <p>创立脑机接口公司 Neuralink 和隧道挖掘公司 The Boring Company，前者旨在实现人脑与 AI 共生，后者试图解决城市交通拥堵。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2017</div>
+        <h4>Model 3 量产 & 世界最大电池</h4>
+        <p>Model 3 发布并成为全球最畅销电动车。Tesla 在 100 天内为南澳州建成世界最大锂电池储能系统，兑现 Twitter 上的赌约。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2018</div>
+        <h4>Falcon Heavy 震撼首飞</h4>
+        <p>将 Musk 个人的红色 Tesla Roadster 送入火星轨道，两个侧助推器同时降落回收，画面震撼全球。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2020</div>
+        <h4>Crew Dragon 载人首飞</h4>
+        <p>将 NASA 宇航员送入国际空间站，成为史上首个承担载人航天任务的商业公司，终结美国 9 年依赖俄罗斯飞船的历史。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2020</div>
+        <h4>Starlink 卫星互联网公测</h4>
+        <p>SpaceX 低轨卫星互联网服务上线，为全球偏远地区提供高速宽带接入，目前已部署数千颗卫星。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2021</div>
+        <h4>成为世界首富</h4>
+        <p>得益于 Tesla 股价飙升，Musk 净资产突破 3000 亿美元成为全球首富。同年 SpaceX 赢得 NASA 29 亿美元登月着陆器合同。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2022</div>
+        <h4>以 440 亿美元收购 Twitter</h4>
+        <p>历经波折完成收购，大刀阔斧改革，大规模裁员并重塑商业模式，后更名为 X，推进万能应用愿景。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2023</div>
+        <h4>创立 xAI</h4>
+        <p>发布 Grok AI，以"追求真理"为核心目标，与 OpenAI、Google 等直接竞争。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2024</div>
+        <h4>Starship 第四次试飞成功</h4>
+        <p>超级重型助推器和星舰飞船均成功在海上软着陆，人类离火星又近了一步。</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2025</div>
+        <h4>领导政府效率部（DOGE）</h4>
+        <p>应特朗普总统邀请，领导新成立的政府效率部，致力于削减联邦政府浪费性支出，推动美国行政体系现代化改革。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-label">Gallery</div>
+    <h2 class="section-title">精选图片</h2>
+    <div class="gallery">
+      <img src="https://picsum.photos/seed/spacex/600/400" alt="SpaceX" loading="lazy">
+      <img src="https://picsum.photos/seed/tesla/600/400" alt="Tesla" loading="lazy">
+      <img src="https://picsum.photos/seed/rocket/600/400" alt="Rocket" loading="lazy">
+    </div>
+  </section>
+
+  <div class="quote-section">
+    <blockquote>当某件事足够重要时，即使胜算不高，你也要去做。</blockquote>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 · 仅为展示用途 · 非官方网站</p>
+  </footer>
+
+  <!-- JSON-LD 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Elon Musk",
+    "alternateName": ["Elon Reeve Musk", "马斯克"],
+    "birthDate": "1971-06-28",
+    "birthPlace": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Pretoria", "addressCountry": "ZA" } },
+    "nationality": { "@type": "Country", "name": "United States" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Pennsylvania" },
+    "jobTitle": ["CEO of SpaceX", "CEO of Tesla", "Founder of xAI"],
+    "url": "https://elonmusk.com",
+    "sameAs": [
+      "https://x.com/elonmusk",
+      "https://en.wikipedia.org/wiki/Elon_Musk"
+    ],
+    "description": "企业家、工程师，SpaceX 创始人兼 CEO、Tesla CEO、xAI 创始人。致力于推动可持续能源、太空探索与人工智能的发展。",
+    "knowsAbout": ["Space Exploration", "Electric Vehicles", "Artificial Intelligence", "Renewable Energy"],
+    "founderOf": [
+      { "@type": "Organization", "name": "SpaceX", "foundingDate": "2002" },
+      { "@type": "Organization", "name": "Tesla", "foundingDate": "2003" },
+      { "@type": "Organization", "name": "xAI", "foundingDate": "2023" },
+      { "@type": "Organization", "name": "Neuralink", "foundingDate": "2016" },
+      { "@type": "Organization", "name": "The Boring Company", "foundingDate": "2016" }
+    ]
+  }
+  </script>
+
+</body>
+</html>
