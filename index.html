@@ -99,7 +99,8 @@
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .company-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); transform: translateY(-2px); }
-    .company-card .icon { font-size: 32px; margin-bottom: 16px; }
+    .company-card .icon { height: 48px; margin-bottom: 16px; display: flex; align-items: center; }
+    .company-card .icon img { max-height: 48px; max-width: 140px; object-fit: contain; }
     .company-card h3 { font-size: 18px; margin-bottom: 8px; }
     .company-card p { font-size: 14px; color: #666; }
     .company-card .role { font-size: 12px; color: #999; margin-top: 12px; }
@@ -174,7 +175,7 @@
     </div>
     <img
       class="hero-portrait"
-      src="https://picsum.photos/seed/elon/400/400"
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/Elon_Musk_Royal_Society_(crop1).jpg?width=400"
       alt="Elon Musk">
     <div class="scroll-arrow" onclick="document.getElementById('companies').scrollIntoView({behavior:'smooth'})">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -186,37 +187,37 @@
     <h2 class="section-title">旗下公司</h2>
     <div class="companies-grid">
       <div class="company-card">
-        <div class="icon">🚀</div>
+        <div class="icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX-Logo.svg?width=280" alt="SpaceX"></div>
         <h3>SpaceX</h3>
         <p>可重复使用火箭技术，目标将人类送上火星。Falcon 9、Starship、Starlink。</p>
         <div class="role">CEO · 2002 年创立</div>
       </div>
       <div class="company-card">
-        <div class="icon">⚡</div>
+        <div class="icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_T_symbol.svg?width=120" alt="Tesla"></div>
         <h3>Tesla</h3>
         <p>全球领先的电动汽车与清洁能源公司。Model S/3/X/Y、Powerwall、Optimus。</p>
         <div class="role">CEO · 2004 年加入</div>
       </div>
       <div class="company-card">
-        <div class="icon">🤖</div>
+        <div class="icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/XAI-Logo.svg?width=120" alt="xAI"></div>
         <h3>xAI</h3>
         <p>专注于理解宇宙真实本质的 AI 公司。开发 Grok 系列模型。</p>
         <div class="role">创始人 · 2023 年创立</div>
       </div>
       <div class="company-card">
-        <div class="icon">🧠</div>
+        <div class="icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Neuralink_logo.svg?width=260" alt="Neuralink"></div>
         <h3>Neuralink</h3>
         <p>脑机接口技术，旨在连接人脑与计算机，治疗神经系统疾病。</p>
         <div class="role">联合创始人 · 2016 年</div>
       </div>
       <div class="company-card">
-        <div class="icon">🛣️</div>
+        <div class="icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Boring_Company_Logo.svg?width=240" alt="The Boring Company"></div>
         <h3>The Boring Company</h3>
         <p>隧道挖掘与城市交通解决方案，缓解地面拥堵。</p>
         <div class="role">创始人 · 2016 年</div>
       </div>
       <div class="company-card">
-        <div class="icon">🌐</div>
+        <div class="icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/X_logo_2023.svg?width=80" alt="X"></div>
         <h3>X (Twitter)</h3>
         <p>全球社交媒体平台，致力于成为万能应用。</p>
         <div class="role">Owner · 2022 年收购</div>
@@ -360,9 +361,9 @@
     <div class="section-label">Gallery</div>
     <h2 class="section-title">精选图片</h2>
     <div class="gallery">
-      <img src="https://picsum.photos/seed/spacex/600/400" alt="SpaceX" loading="lazy">
-      <img src="https://picsum.photos/seed/tesla/600/400" alt="Tesla" loading="lazy">
-      <img src="https://picsum.photos/seed/rocket/600/400" alt="Rocket" loading="lazy">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/First_Launch_of_SpaceX_Falcon_Heavy.jpg?width=600" alt="SpaceX Falcon Heavy 首飞" loading="lazy">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Starship_during_IFT-5.jpg?width=600" alt="Starship IFT-5 试飞" loading="lazy">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tesla_Model_S_2024_Blue.jpg?width=600" alt="Tesla Model S" loading="lazy">
     </div>
   </section>
 
